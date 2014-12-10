@@ -1,0 +1,23 @@
+{
+  "name": "okcoin-ws",
+  "version": "0.0.1",
+  "description": "OKCoin WebSocket API wrapper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://xkmo@bitbucket.org/xkmo/okcoin-ws.git"
+  },
+  "keywords": [
+    "okcoin",
+    "btc",
+    "bitcoin"
+  ],
+  "author": "xkmo",
+  "license": "MIT",
+  "dependencies": {
+    "socket.io-client": "^0.9.16"
+  }
+}
