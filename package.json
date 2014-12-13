@@ -18,6 +18,12 @@
   "author": "xkmo",
   "license": "MIT",
   "dependencies": {
-    "socket.io-client": "^0.9.16"
-  }
+    "MD5": "^1.2.1",
+    "socket.io-client": "^0.9.16",
+    "ws": "^0.5.0"
+  },
+  "devDependencies": {
+    "should": "4.3.1"
+  },
+  "readmeFilename": "README.md"
 }
