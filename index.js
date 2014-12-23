@@ -40,6 +40,7 @@ OKCoin.prototype.subscribe = function(channels) {
 				break;
 			case 'ok_usd_realtrades':
 			case 'ok_cny_realtrades':
+			case 'ok_usd_future_realtrades':
 				that._send(name);
 				break;
 			default:
@@ -54,6 +55,8 @@ OKCoin.prototype.subscribe = function(channels) {
 		var messages = JSON.parse(data);
 		messages.forEach(function(message) {
 			var callback = channels[message['channel']];
+			if (!callback) return;
+
 			if (message['errorcode']) {
 				message['errormessage'] = errorMessage(message['errorcode']);
 				callback(null, message);
@@ -76,6 +79,14 @@ OKCoin.prototype.cancelOrder = function(symbol, orderId) {
 	var params = {'symbol': symbol, 'order_id': orderId};
 	var channel = this.site === 'com' ? 'ok_spotusd_cancel_order' : 'ok_spotcny_cancel_order';
 	this._send(channel, params);
+}
+
+OKCoin.prototype.futureTrade = function(params) {
+	this._send('ok_futuresusd_trade', params);
+}
+
+OKCoin.prototype.futureCancelOrder = function(params) {
+	this._send('ok_futuresusd_cancel_order', params);
 }
 
 function sign(params, secret) {

@@ -1,4 +1,4 @@
-# OKCoin-ws
+# okoin-ws
 
 OKCoin WebSocket API wrapper.
 
@@ -8,5 +8,6 @@ WARNING: Still under active development. Use at your own risk.
 
 # Todo
 
-- future trading API
+- example
+- reconnection
 - exchange meta info: trading fee, minimal ammount etc
